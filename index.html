@@ -122,6 +122,8 @@ $(document).ready(function(){
 			}, 400);
 			return false;
 		});
+		 let currentYear = (new Date).getFullYear();
+   		  $("#thisYear").html(currentYear);
 });
 </script>
 
@@ -219,7 +221,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	<div class="row" id="footContainer">
 
 		<div id="footCopy" class="col-lg-2">
-			<h5 style="padding-top: 15px;"><strong>Murphy Cemetery Copyright 2021</strong></h5>
+			<h5 style="padding-top: 15px;"><strong>Murphy Cemetery &copy; Copyright <span id="thisYear"></span></strong></h5>
 		</div>
 		
 		<div id="navFoot" class="col-lg-8">
