@@ -1,0 +1,121 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="adminAddBurial.css">
+
+</head>
+<body>
+    <div id="displayArea">
+        <h1>Add Burial Information</h1>
+
+        <div class="formStyle">
+            <form method="post" name="addBurialForm" action="adminAddBurial.php" enctype="multipart/form-data">
+                
+                <div class="inputCols3">
+                    <div class="labelDesc">
+                        <label>First Name</label><br>
+                    </div>
+                    <input type="text" name="fName" value=""/>
+                </div>
+                <div class="inputCols3">
+                    <div class="labelDesc">
+                        <label>Middle Name</label><br>
+                    </div>
+                    <input type="text" name="mName" value=""/>
+                </div>
+                <div class="inputCols3">
+                    <div class="labelDesc">
+                        <label>Last Name</label><br>
+                    </div> 
+                    <input type="text" name="lName" value=""/>
+                </div>  
+                
+                <div class="inputCols3">
+                    <div class="labelDesc">
+                        <label>Birth Date</label><br>
+                    </div>
+                    <input type="text" name="birthDate" value=""/>
+                </div>
+                <div class="inputCols3">
+                    <div class="labelDesc">
+                        <label>Death Date</label><br>
+                    </div>
+                    <input type="text" name="deathDate" value=""/>
+                </div>
+                <div class="inputCols3">
+                    <div class="labelDesc">
+                        <label>Burial Date</label><br>
+                    </div> 
+                    <input type="text" name="BurialDate" value=""/>
+                </div>  
+                
+                <hr>
+
+                <div class="inputCols1">
+                    <div class="labelDesc">
+                        <label>Spouse(s)</label><br>
+                    </div> 
+                    <input type="text" name="spouse" value=""/>
+                </div>
+                
+                <div class="inputCols1">
+                    <div class="labelDesc">
+                        <label>Children</label><br>
+                    </div> 
+                    <input type="text" name="children" value=""/>
+                </div>
+
+                <div class="inputCols2">
+                    <div class="labelDesc">
+                        <label>Mother</label><br>
+                    </div> 
+                    <input type="text" name="mother" value=""/>
+                </div>
+
+                <div class="inputCols2">
+                    <div class="labelDesc">
+                        <label>Father</label><br>
+                    </div> 
+                    <input type="text" name="father" value=""/>
+                </div>
+
+                <div class="inputCols1">
+                    <div class="labelDesc">
+                        <label>Sibling(s)</label><br>
+                    </div> 
+                    <input type="text" name="sibling" value=""/>
+                </div>
+
+                <hr>
+
+                <div class="inputCols2Plot">
+                    <div class="labelDesc">
+                        <label>Plot #</label><br>
+                    </div> 
+                    <input type="text" name="plotNum" value=""/>
+                </div>
+
+                <div class="inputCols2Plot">
+                    <div class="labelDesc">
+                        <label>Grave #</label><br>
+                    </div> 
+                    <input type="text" name="graveNum" value=""/>
+                </div>
+
+                <div class="inputCols1">
+                        <label>Add Images:</label>
+                    <input style="padding-left: 10px;" type="file" name="addImg" multiple/>
+                </div>
+
+                <hr>
+
+                
+                <input class="buttonStyle" type="submit" name="login" value="Submit" />
+                <input class="buttonStyle" type="reset" name="reset" value="Reset" />  
+                
+    
+            </form>
+        </div>
+    </div>
+</body>
+</html>
