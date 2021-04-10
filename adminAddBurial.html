@@ -3,6 +3,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="adminAddBurial.css">
 
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function (event) {
+            var checkbox = document.getElementById('veteran');
+            checkbox.addEventListener('change', function (event) {
+                if (checkbox.checked) {
+                    document.getElementById("veteranInfo").setAttribute("style", "display: inline-block");
+                } else {
+                    document.getElementById("veteranInfo").setAttribute("style", "display: none");
+                }
+            });
+        });
+
+    </script>
+
 </head>
 <body>
     <div id="displayArea">
@@ -88,6 +103,34 @@
 
                 <hr>
 
+                <div class="inputCols1">
+                    <label>Veteran?</label>
+                    <input id="veteran" type="checkbox" name="veteran" value=""/>
+                </div>
+
+                <div id="veteranInfo" style="display: none;">
+                    <div class="inputCols3">
+                        <div class="labelDesc">
+                            <label>Branch of Service</label><br>
+                        </div>
+                        <input type="text" name="branch" value=""/>
+                    </div>
+                    <div class="inputCols3">
+                        <div class="labelDesc">
+                            <label>From:</label><br>
+                        </div>
+                        <input type="text" name="serviceFrom" value=""/>
+                    </div>
+                    <div class="inputCols3">
+                        <div class="labelDesc">
+                            <label>To:</label><br>
+                        </div> 
+                        <input type="text" name="serviceTo" value=""/>
+                    </div> 
+                </div>
+
+                <hr>
+
                 <div class="inputCols2Plot">
                     <div class="labelDesc">
                         <label>Plot #</label><br>
@@ -108,7 +151,6 @@
                 </div>
 
                 <hr>
-
                 
                 <input class="buttonStyle" type="submit" name="login" value="Submit" />
                 <input class="buttonStyle" type="reset" name="reset" value="Reset" />  
