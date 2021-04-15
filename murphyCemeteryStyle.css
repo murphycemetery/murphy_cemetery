@@ -222,6 +222,14 @@ footer{
 
 }
 
+@media  screen and (max-width: 330px){
+	
+main input {
+width: 90%;
+}
+
+}
+
 @media  screen and (max-width: 290px){
 
 #divFootNav{
