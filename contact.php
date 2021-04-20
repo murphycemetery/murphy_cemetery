@@ -341,9 +341,6 @@ $(document).ready(function(){
 					<a class="nav-link2" href="about.html">About/History</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link2" href="location.html">Location</a>
-				</li>
-				<li class="nav-item">
 					<a class="nav-link2" href="burialSearch.php">Burial Search</a>
 				</li>
 				<li class="nav-item">
