@@ -201,7 +201,7 @@ $(document).ready(function(){
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNav" style="justify-content: flex-end;">
 			<ul class="navbar-nav" >
-				<li class="nav-item active">
+				<li class="nav-item">
 					<a class="nav-link" href="index.html">Home</a>
 				</li>
 				<li class="nav-item">
@@ -210,7 +210,7 @@ $(document).ready(function(){
 				<li class="nav-item">
 					<a class="nav-link" href="burialSearch.php">Burial Search</a>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item active">
 					<a class="nav-link" href="contact.php">Contact</a>
 				</li>
 				<li class="nav-item">
@@ -334,7 +334,7 @@ $(document).ready(function(){
 			<div id="divFootNav">
 				<nav class="navbar navbar-expand-md">
 			<ul class="navbar-nav" >
-				<li class="nav-item active">
+				<li class="nav-item">
 					<a class="nav-link2" href="index.html">Home</a>
 				</li>
 				<li class="nav-item">
@@ -343,7 +343,7 @@ $(document).ready(function(){
 				<li class="nav-item">
 					<a class="nav-link2" href="burialSearch.php">Burial Search</a>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item active">
 					<a class="nav-link2" href="contact.php">Contact</a>
 				</li>
 				<li class="nav-item">
