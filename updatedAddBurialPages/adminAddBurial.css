@@ -1,0 +1,91 @@
+
+#displayArea{
+    text-align: center;
+    display: block;
+    width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.formStyle {
+    padding-top: 35px;
+    padding-bottom: 10px;
+    margin-top: 50px;
+    background-color:#E8E6E3 ;
+    font-size: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+    box-shadow: 2px 2px 2px;
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
+
+.buttonStyle{
+    margin: 15px;
+    font-size: 22px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.buttonStyle:hover {
+    background-color: #45a049;
+}
+
+
+input[type=text]{
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    width: 100%;
+}
+
+.inputCols3{
+    display: inline-block;
+    width: 25%;
+    margin: 20px;
+}
+
+.inputCols1{
+    display: inline-block;
+    width: 84%;
+    margin: 20px;
+}
+
+.inputCols2{
+    display: inline-block;
+    width: 39.5%;
+    margin: 20px;
+}
+
+.inputCols2Plot{
+    display: inline-block;
+    width: 20%;
+    margin: 20px;
+}
+
+.labelDesc{
+    float: left;
+}
+
+hr{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    height:3px;
+    border-width:0;
+    color:gray;
+    background-color:gray;
+    width: 75%;
+}
+
+::placeholder{
+    color: red;
+    opacity: .7;
+}
