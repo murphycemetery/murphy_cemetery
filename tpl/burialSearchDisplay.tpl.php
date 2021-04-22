@@ -9,12 +9,19 @@
     <header>
       <nav>
         <ul>
+          <?php if($_SESSION['loggedIn'] == "yes") { ?>
+            <a href="adminIndex.php"><li>Admin Home</li></a>
+          <?php } ?>
           <a href="index.php"><li>Home</li></a>
           <a href="about.php"><li>About/History</li></a>
           <a href="location.php"><li>Location</li></a>
           <a href="burialSearch.php"><li>Burial Search</li></a>
           <a href="contact.php"><li>Contact</li></a>
-          <a href="login.php"><li>Login</li></a>
+          <?php if($_SESSION['loggedIn'] == "yes") { ?>
+            <a href="logout.php"><li>Logout</li></a>
+          <?php } else { ?>
+            <a href="adminLogin.php"><li>Login</li></a>
+          <?php } ?>
         </ul>
       </nav>
     </header>
