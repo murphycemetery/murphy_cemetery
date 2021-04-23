@@ -112,22 +112,28 @@ $(document).ready(function(){
 </script>
 
 </head>
-<header>	
-	
-	<nav class="navbar navbar-expand-lg" style="background-color: #748B75;">
+ <header>
+    <nav class="navbar navbar-expand-lg" style="background-color: #748B75;">
 	<a class="navbar-brand mr-auto" href="index.html">
-			Murphy Cemetery
+	<?php if($_SESSION['loggedIn'] == "yes") { ?>
+           		Admin Home	
+           <?php } else { ?>
+	            Murphy Cemetery
+          <?php } ?>
 		</a>
 		<button class="navbar-toggler custom-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNav" style="justify-content: flex-end;">
 			<ul class="navbar-nav" >
-				<li class="nav-item active">
+				<li class="nav-item">
 					<a class="nav-link" href="index.html">Home</a>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item active">
 					<a class="nav-link" href="about.html">About/History</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="location.html">Location</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="burialSearch.php">Burial Search</a>
@@ -136,12 +142,16 @@ $(document).ready(function(){
 					<a class="nav-link" href="contact.php">Contact</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="adminLogin.php">Login</a>
+				<?php if($_SESSION['loggedIn'] == "yes") { ?>
+            				<a class="nav-link" href="logout.php">Logout</a>
+            				 <?php } else { ?>
+					<a class="nav-link" href="login.php">Login</a>
+					 <?php } ?>
 				</li>
 			</ul>
 		</div>
 	</nav>
-</header>
+    </header>
 <body>
 <div class="col-sm-12" style="background: linear-gradient(rgba(265,265,265, .5), rgba(20,20,20, .5)), url(images/murphyCemetery.jpg);height:60vh;min-height:20px; background-size:cover;background-repeat: no-repeat;">
 <h1 id="heading">WELCOME TO MURPHY CEMETERY!</h1>
@@ -225,7 +235,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 					<a class="nav-link2" href="contact.php">Contact</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link2" href="adminLogin.php">Login</a>
+					<?php if($_SESSION['loggedIn'] == "yes") { ?>
+            				<a class="nav-link" href="logout.php">Logout</a>
+            				 <?php } else { ?>
+					<a class="nav-link" href="login.php">Login</a>
+					 <?php } ?>
 				</li>
 			</ul>
 	</nav>
