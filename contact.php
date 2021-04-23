@@ -167,10 +167,12 @@ font-size: 1.3em;
 @media  screen and (max-width: 1024px){
 .col1 {
 display: block;
+width: 90%;
 }
 
 .col2 {
 display: block;
+width: 90%;
 }
 
 }
@@ -182,11 +184,11 @@ width: 100%;
 }
 
 .col1 {
-width: 60%;
+width: 80%;
 }
 
 .col2 {
-width: 60%;
+width: 80%;
 }
 
 }
