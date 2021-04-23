@@ -248,13 +248,10 @@ $(document).ready(function(){
 		<div class="collapse navbar-collapse" id="navbarNav" style="justify-content: flex-end;">
 			<ul class="navbar-nav" >
 				<li class="nav-item">
-					<a class="nav-link" href="index.html">Home</a>
+					<a class="nav-link" href="index.php">Home</a>
 				</li>
 				<li class="nav-item active">
-					<a class="nav-link" href="about.html">About/History</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="location.html">Location</a>
+					<a class="nav-link" href="about.php">About/History</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="burialSearch.php">Burial Search</a>
@@ -376,11 +373,11 @@ $(document).ready(function(){
 	
 	<div class="row" id="footContainer">
 
-		<div id="footCopy" class="col-lg-2">
+		<div id="footCopy" class="col-lg-3">
 			<h5 style="padding-top: 15px;"><strong>Murphy Cemetery &copy; Copyright <span id="thisYear"></span></strong></h5>
 		</div>
 		
-		<div id="navFoot" class="col-lg-8">
+		<div id="navFoot" class="col-lg-7">
 			
 			<p>
 			
@@ -388,10 +385,10 @@ $(document).ready(function(){
 				<nav class="navbar navbar-expand-md">
 			<ul class="navbar-nav" >
 				<li class="nav-item">
-					<a class="nav-link2" href="index.html">Home</a>
+					<a class="nav-link2" href="index.php">Home</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link2" href="about.html">About/History</a>
+					<a class="nav-link2" href="about.php">About/History</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link2" href="burialSearch.php">Burial Search</a>
@@ -401,9 +398,9 @@ $(document).ready(function(){
 				</li>
 				<li class="nav-item">
 					<?php if($_SESSION['loggedIn'] == "yes") { ?>
-            				<a class="nav-link" href="logout.php">Logout</a>
+            				<a class="nav-link2" href="logout.php">Logout</a>
             				 <?php } else { ?>
-					<a class="nav-link" href="login.php">Login</a>
+					<a class="nav-link2" href="login.php">Login</a>
 					 <?php } ?>
 				</li>
 			</ul>
