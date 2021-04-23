@@ -114,7 +114,7 @@
     <link rel="stylesheet" type="text/css" href="murphyCemeteryStyle.css">
 <style>
 
-.contact-wrap, form {
+.contact-wrap {
 margin-left: auto;
 margin-right: auto;
 text-align: center;
