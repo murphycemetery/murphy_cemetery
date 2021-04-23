@@ -29,7 +29,7 @@ text-align: center;
 width: 50%;
 font-size: 1.3em;
 margin-top: 30px;
-margin-bottom: 40px;
+margin-bottom: 20%;
 }
 
 main h1 {
@@ -204,6 +204,15 @@ footer{
 	
 }
 
+@media  screen and (max-width: 540px){
+
+#divFootNav{
+		width: 50%;
+		padding-left: 30px;
+}
+
+}
+
 @media  screen and (max-width: 460px){
 
 #divFootNav{
@@ -226,6 +235,11 @@ footer{
 	
 main input {
 width: 90%;
+}
+	
+#divFootNav{
+		width: 80%;
+		padding-left: 15px;
 }
 
 }
