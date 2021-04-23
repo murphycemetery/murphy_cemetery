@@ -87,13 +87,13 @@
                     <div class="labelDesc">
                         <label>Date of Birth <span style="font-size:15px; color:gray">(mm-dd-yyyy)</span></label><br>
                     </div>
-                    <input type="text" name="birthDate" value="<?php echo $birthDate ?>" placeholder="<?php echo $birthDateERR ?>"/>
+                    <input type="text" name="birthDate" value="<?php if(!$birthDate == "") echo $birthDate ?>" placeholder="<?php echo $birthDateERR ?>"/>
                 </div>
                 <div class="inputCols2">
                     <div class="labelDesc">
                         <label>Birth Year <span style="font-size:15px; color:gray">(yyyy)</span></label><br>
                     </div>
-                    <input type="text" name="birthYear" value="<?php echo $birthYear ?>" placeholder="<?php echo $birthYearERR ?>"/>
+                    <input type="text" name="birthYear" value="<?php if(!$birthYear == "") echo $birthYear ?>" placeholder="<?php echo $birthYearERR ?>"/>
                 </div> 
 
                 <div class="inputCols2">
@@ -106,7 +106,7 @@
                     <div class="labelDesc">
                         <label>Death Year <span style="font-size:15px; color:gray">(yyyy)</span></label><br>
                     </div>
-                    <input type="text" name="deathYear" value="<?php echo $deathYear ?>" placeholder="<?php echo $deathYearERR ?>"/>
+                    <input type="text" name="deathYear" value="<?php if(!$deathYear == "") echo $deathYear ?>" placeholder="<?php echo $deathYearERR ?>"/>
                 </div>
 
                 <div class="inputCols2">
@@ -119,7 +119,7 @@
                     <div class="labelDesc">
                         <label>Burial Year <span style="font-size:15px; color:gray">(yyyy)</span></label><br>
                     </div>
-                    <input type="text" name="intermentYear" value="<?php echo $intermentYear ?>" placeholder="<?php echo $intermentYearERR ?>"/>
+                    <input type="text" name="intermentYear" value="<?php if(!$intermentYear == "") echo $intermentYear ?>" placeholder="<?php echo $intermentYearERR ?>"/>
                 </div>
                 
                 <hr>

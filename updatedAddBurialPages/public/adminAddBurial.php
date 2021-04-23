@@ -90,7 +90,7 @@
 
         //validate fields
         $validForm = true;
-/*
+
         //validate first name
 		if($fName == ""){
             $firstNameERR = "*Please enter a first name";
@@ -99,7 +99,6 @@
 
         //validate birth date
         if($birthDate == ""){
-            $birthDate = "";
             $birthDateERR = "";
         }
         elseif(!preg_match('/^(18|19|20|21)\d\d[- \/.](0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])$/', $birthDate)){
@@ -108,18 +107,16 @@
             $validForm = false;
         }
 
-*/
         //validate birth year
         if($birthYear == ""){
             $birthYearERR = "";
-            $birthYear = "";
         }
         elseif(!preg_match("/(?:(?:18|19|20|21)[0-9]{2})/", $birthYear)){
             $birthYearERR = "Please enter a valid year (yyyy)";
             $birthYear = "";
             $validForm = false;
         }
-/*
+
         //validate death date
         if($deathDate == ""){
             $deathDate = "";
@@ -134,7 +131,6 @@
         //validate death year
         if($deathYear == ""){
             $deathYearERR = "";
-            $deathYear = "";
         }
         elseif(!preg_match("/(?:(?:18|19|20|21)[0-9]{2})/", $deathYear)){
             $deathYearERR = "Please enter a valid year (yyyy)";
@@ -156,7 +152,6 @@
         //validate burial year
         if($intermentYear == ""){
             $intermentYearERR = "";
-            $intermentYear = "";
         }
         elseif(!preg_match("/(?:(?:18|19|20|21)[0-9]{2})/", $intermentYear)){
             $intermentYearERR = "Please enter a valid year (yyyy)";
@@ -188,8 +183,8 @@
             $validForm = false;
         }
 
-     
-*/
+
+
         //create sql stmt
         $sql = "INSERT INTO `cemetery-burials` (`burials-first-name`, `burials-middle-name`, `burials-last-name`, `burials-dob`, `burials-birth-year`, `burials-date-of-death`, `burials-death-year`, `burials-plot-row`, `burials-plot-number`, `burials-interment-date`, `burials-interment-year`, `burials-veteran`, `burials-veteran-branch`, `burials-veteran-rank`, `burials-veteran-service-time`, `burials-spouse-first-name`, `burials-spouse-middle-name`, `burials-spouse-last-name`, `burials-childrens-names`, `burials-mother-first-name`, `burials-mother-middle-name`, `burials-mother-last-name`, `burials-father-first-name`, `burials-father-middle-name`, `burials-father-last-name`, `burials-img-deceased`, `burials-img-grave1`, `burials-img-grave2`, `burials-obituary`, `burials-family-notes`)
                 VALUES (:fName, :mName, :lName, :birthDate, :birthYear, :deathDate, :deathYear, :plotRow, :plotNum, :intermentDate, :intermentYear, :veteran, :milBranch, :milRank, :serviceTime, :spouseFName, :spouseMName, :spouseLName, :childrensNames, :motherFName, :motherMName, :motherLName, :fatherFName, :fatherMName, :fatherLName, '$imgDeceased', '$imgGrave1', '$imgGrave2', :obituary, :familyNotes)";
@@ -226,10 +221,10 @@
             $stmt->bindParam(":fatherLName", $fatherLName);
             $stmt->bindParam(":obituary", $obituary);
             $stmt->bindParam(":familyNotes", $familyNotes);
-
-
+            
+            
             $stmt->execute();
-
+            
             //grab the latest burial id
             $burialId = $conn->lastInsertId();
 
