@@ -133,6 +133,18 @@ padding-bottom: 5px;
 list-style-type: none;
 }
 
+.col1 {
+display: inline-block;
+width: 36%;
+margin: 20px;
+}
+
+.col2 {
+display: inline-block;
+width: 36%;
+margin: 20px;
+}
+
 #contact-form ul li {
 margin-right: 50px;
 list-style-type: none;
@@ -152,17 +164,46 @@ padding-bottom: 30px;
 font-size: 1.3em;
 }
 
+@media  screen and (max-width: 1024px){
+.col1 {
+display: block;
+}
+
+.col2 {
+display: block;
+}
+
+}
+
 @media  screen and (max-width: 576px){
 
 .contact-wrap, form {
 width: 100%;
 }
 
+.col1 {
+width: 60%;
 }
 
-@media  screen and (max-width: 290px){
+.col2 {
+width: 60%;
+}
+
+}
+
+@media  screen and (max-width: 330px){
 .contact-wrap form input {
 width: 90%;
+}
+
+.col1 {
+width: 95%;
+margin: 0px;
+}
+
+.col2 {
+width: 95%;
+margin: 0px;
 }
 
 }
@@ -190,11 +231,14 @@ $(document).ready(function(){
 </script>
 
 </head>
-<header>	
-	
-	<nav class="navbar navbar-expand-lg" style="background-color: #748B75;">
+ <header>
+    <nav class="navbar navbar-expand-lg" style="background-color: #748B75;">
 	<a class="navbar-brand mr-auto" href="index.html">
-			Murphy Cemetery
+	<?php if($_SESSION['loggedIn'] == "yes") { ?>
+           		Admin Home	
+           <?php } else { ?>
+	            Murphy Cemetery
+          <?php } ?>
 		</a>
 		<button class="navbar-toggler custom-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -204,22 +248,29 @@ $(document).ready(function(){
 				<li class="nav-item">
 					<a class="nav-link" href="index.html">Home</a>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item active">
 					<a class="nav-link" href="about.html">About/History</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="location.html">Location</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="burialSearch.php">Burial Search</a>
 				</li>
-				<li class="nav-item active">
+				<li class="nav-item">
 					<a class="nav-link" href="contact.php">Contact</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="adminLogin.php">Login</a>
+				<?php if($_SESSION['loggedIn'] == "yes") { ?>
+            				<a class="nav-link" href="logout.php">Logout</a>
+            				 <?php } else { ?>
+					<a class="nav-link" href="login.php">Login</a>
+					 <?php } ?>
 				</li>
 			</ul>
 		</div>
 	</nav>
-</header>
+    </header>
 <body>
 
     <div class="contact-wrap">
@@ -236,12 +287,12 @@ $(document).ready(function(){
 
             <ul class="flex-outer">
 
-            <li>
+            <li class="col1">
                 <label for="firstName">First Name <span class="form-required">*</span></label>
                 <input type="text" id="firstName" name="firstName" value="<?php echo $firstName ?>"><span class="<?php echo $msgClass ?>"><?php echo $firstNameError ?></span>
             </li>
 
-            <li>
+            <li class="col1">
                 <label for="lastName">Last Name <span class="form-required">*</span></label>
                 <input type="text" id="lastName" name="lastName" value="<?php echo $lastName ?>"><span class="<?php echo $msgClass ?>"><?php echo $lastNameError ?></span>
             </li>
@@ -251,12 +302,12 @@ $(document).ready(function(){
                 <input type="text" id="age" name="age" value="1" style="display: none;">
             </li>
 
-            <li>
+            <li class="col2">
                 <label for="email">Email Address <span class="form-required">*</span></label>
                 <input type="email" id="email" name="email" value="<?php echo $email ?>"><span class="<?php echo $msgClass ?>"><?php echo $emailError ?></span>
             </li>
 
-            <li>
+            <li class="col2">
                 <label for="phone">Phone Number <span class="form-required">*</span></label>
                 <input type="tel" id="phone" name="phone" placeholder="712-221-5827" value="<?php echo $phone ?>"><span class="<?php echo $msgClass ?>"><?php echo $phoneError ?></span>
             </li>
@@ -347,7 +398,11 @@ $(document).ready(function(){
 					<a class="nav-link2" href="contact.php">Contact</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link2" href="adminLogin.php">Login</a>
+					<?php if($_SESSION['loggedIn'] == "yes") { ?>
+            				<a class="nav-link" href="logout.php">Logout</a>
+            				 <?php } else { ?>
+					<a class="nav-link" href="login.php">Login</a>
+					 <?php } ?>
 				</li>
 			</ul>
 	</nav>
