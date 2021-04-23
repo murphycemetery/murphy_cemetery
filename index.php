@@ -133,9 +133,6 @@ $(document).ready(function(){
 					<a class="nav-link" href="about.html">About/History</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="location.html">Location</a>
-				</li>
-				<li class="nav-item">
 					<a class="nav-link" href="burialSearch.php">Burial Search</a>
 				</li>
 				<li class="nav-item">
@@ -211,11 +208,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	
 	<div class="row" id="footContainer">
 
-		<div id="footCopy" class="col-lg-2">
+		<div id="footCopy" class="col-lg-3">
 			<h5 style="padding-top: 15px;"><strong>Murphy Cemetery &copy; Copyright <span id="thisYear"></span></strong></h5>
 		</div>
 		
-		<div id="navFoot" class="col-lg-8">
+		<div id="navFoot" class="col-lg-7">
 			
 			<p>
 			
@@ -236,9 +233,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 				</li>
 				<li class="nav-item">
 					<?php if($_SESSION['loggedIn'] == "yes") { ?>
-            				<a class="nav-link" href="logout.php">Logout</a>
+            				<a class="nav-link2" href="logout.php">Logout</a>
             				 <?php } else { ?>
-					<a class="nav-link" href="login.php">Login</a>
+					<a class="nav-link2" href="login.php">Login</a>
 					 <?php } ?>
 				</li>
 			</ul>
