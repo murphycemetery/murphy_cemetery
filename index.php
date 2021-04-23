@@ -127,10 +127,10 @@ $(document).ready(function(){
 		<div class="collapse navbar-collapse" id="navbarNav" style="justify-content: flex-end;">
 			<ul class="navbar-nav" >
 				<li class="nav-item">
-					<a class="nav-link" href="index.html">Home</a>
+					<a class="nav-link" href="index.php">Home</a>
 				</li>
 				<li class="nav-item active">
-					<a class="nav-link" href="about.html">About/History</a>
+					<a class="nav-link" href="about.php">About/History</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="burialSearch.php">Burial Search</a>
@@ -220,10 +220,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 				<nav class="navbar navbar-expand-md">
 			<ul class="navbar-nav" >
 				<li class="nav-item active">
-					<a class="nav-link2" href="index.html">Home</a>
+					<a class="nav-link2" href="index.php">Home</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link2" href="about.html">About/History</a>
+					<a class="nav-link2" href="about.php">About/History</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link2" href="burialSearch.php">Burial Search</a>
