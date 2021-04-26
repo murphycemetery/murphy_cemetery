@@ -13,7 +13,7 @@ if($_SESSION['loggedIn'] == "yes") {
 
   );
   //var_dump($burial);
-  foreach ($burialList as $burialsData) {
+  //foreach ($burialList as $burialsData) {
     if (isset($burialsData['burials-dob'])) {
       $birthDateOld = $burialsData['burials-dob'];
       $birthDateNew = date("F jS, Y", strtotime($birthDateOld));
@@ -31,7 +31,7 @@ if($_SESSION['loggedIn'] == "yes") {
       $intermentDateOld = $burialsData['burials-interment-date'];
       $intermentDateNew = date("F jS, Y", strtotime($intermentDateOld));
     }
-  }
+  //}
 
   require_once('../tpl/adminIndex.tpl.php');
 } else {

@@ -13,8 +13,6 @@ if (isset($_REQUEST['burials-id']) && $_REQUEST['burials-id'] > 0)
 }
 
 
-
-
 if (isset($burialDataArray['burials-dob'])) {
   $birthDateOld = $burialDataArray['burials-dob'];
   $birthDateNew = date("F jS, Y", strtotime($birthDateOld));

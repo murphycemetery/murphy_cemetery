@@ -48,8 +48,14 @@
             <?php if(isset($burialsData['burials-img-deceased'])) { ?>
               <img src="images/<?php echo $burialsData['burials-img-deceased'];?>" alt = "<?php echo $burialsData['burials-first-name'];?> <?php echo $burialsData['burials-last-name']; ?>">
             <?php } ?>
-            <?php if(isset($burialsData['burials-dob']) && isset($burialsData['burials-date-of-death'])) { ?>
-              <p><?php echo $burialsData['burials-dob']; ?> - <?php echo $burialsData['burials-date-of-death']; ?></p>
+            <?php if(isset($burialsData['burials-dob']) && isset($burialsData['burials-date-of-death'])) {
+                $birthDateOld = $burialsData['burials-dob'];
+                $birthDateNew = date("F jS, Y", strtotime($birthDateOld));
+
+                $deathDateOld = $burialsData['burials-date-of-death'];
+                $deathDateNew = date("F jS, Y", strtotime($deathDateOld));
+                ?>
+              <p><?php echo $birthDateNew ?> - <?php echo $deathDateNew ?></p>
             <?php } else if(isset($burialsData['burials-birth-year']) && isset($burialsData['burials-death-year'])) { ?>
               <p><?php echo $burialsData['burials-birth-year']; ?> - <?php echo $burialsData['burials-death-year']; ?></p>
             <?php } ?>
@@ -57,8 +63,10 @@
             <p>Plot Number: <?php echo $burialsData['burials-plot-number']; ?></p>
             <?php if($_SESSION['loggedIn'] == "yes") { ?>
               <a href="../public/adminAddBurial.php?burials-id=<?php echo $burialsData['burials-id']; ?>"><button>Edit</button></a>
+              <a href="../public/deleteConfirmation.php?burials-id=<?php echo $burialsData['burials-id']; ?>"><button>Delete</button></a>
             <?php } ?>
             <a href="../public/burialSearchIndividual.php?burials-id=<?php echo $burialsData['burials-id']; ?>"><button>View</button></a>
+
         </div>
         <?php } ?>
     </main>

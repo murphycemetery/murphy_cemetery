@@ -262,7 +262,7 @@ class CemeteryBurials
         { $currentYear = date('Y');
           $currentYear = intval($currentYear);
         //var_dump($year);
-          if ($this->burialsData['burials-death-year'] > 1000 && $this->burialsData['burials-death-year'] >= $currentYear)
+          if ($this->burialsData['burials-death-year'] > 1000 && $this->burialsData['burials-death-year'] <= $currentYear)
           {
             $this->errors['burials-death-year'] = "Please enter a valid death year";
             $isValid = false;
@@ -473,5 +473,22 @@ function authorizeBurials($inFirstName, $inLastName){
             return $burials_info;
     }
 
+  function delete($burials_id) {
+    $stmt = $this->db->prepare("DELETE FROM `cemetery-burials` WHERE `burials-id` = $burials_id");
+    //run DELETE query
+    //var_dump($stmt);
+    //if the query runs successfully print  message telling the event was deleted
+    if($stmt) {
+      $stmt->execute(array('%' . $burials_id . '%'));
+      //var_dump($stmt);
+    	$deleteMsg = "The burial associated with ID #". $_GET['burials-id'] ." has been deleted.";
+    } else {
+    	$deleteMsg = "Uh-oh, we weren't able to delete the burial associated with ID #".$burials_id." Please try again.";
+    }
+
+    //var_dump($deleteMsg);
+
+    return $deleteMsg;
   }
+}
 ?>

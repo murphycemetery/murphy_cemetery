@@ -44,6 +44,7 @@
               <th>Death Year&nbsp;-&nbsp;<a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>?sortColumn=`burials-death-year`&sortDirection=ASC">A</a>&nbsp;<a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>?sortColumn=`burials-death-year`&sortDirection=DESC">D</a></th>
               <th>&nbsp;</th>
               <th>&nbsp;</th>
+              <th>&nbsp;</th>
           </tr>
           <?php foreach ($burialList as $burialsData)
           { ?>
@@ -58,7 +59,7 @@
 
                   <td><a href="../public/adminAddBurial.php?burials-id=<?php echo $burialsData['burials-id']; ?>">Edit</a></td>
                   <td><a href="../public/burialSearchIndividual.php?burials-id=<?php echo $burialsData['burials-id']; ?>">View</a></td>
-
+                  <td><a href="../public/deleteConfirmation.php?burials-id=<?php echo $burialsData['burials-id']; ?>">Delete</a></td>
               </tr>
           <?php } ?>
       </table><br>

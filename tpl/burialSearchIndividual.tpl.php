@@ -69,7 +69,9 @@
               <p class = "service">Years of Service: <?php echo (isset($burialDataArray['burials-veteran-service-time']) ? $burialDataArray['burials-veteran-service-time'] : '');?></p>
 
           <?php  } ?>
+            <?php if(!is_null($burialDataArray['burials-spouse-first-name']) || !is_null($burialDataArray['burials-father-first-name']) && !is_null($burialDataArray['burials-mother-first-name'])) { ?>
             <h4>Family Information</h4>
+          <?php } ?>
             <?php if(!is_null($burialDataArray['burials-spouse-first-name']) && !is_null($burialDataArray['burials-spouse-last-name'])) { ?>
               <p class = "spouse">Spouse: <?php echo (isset($burialDataArray['burials-spouse-first-name']) ? $burialDataArray['burials-spouse-first-name'] : '');?>
                                 <?php echo (isset($burialDataArray['burials-spouse-middle-name']) ? $burialDataArray['burials-spouse-middle-name'] : '');?>
