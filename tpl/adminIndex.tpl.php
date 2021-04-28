@@ -57,7 +57,7 @@
                   <td><?php echo $burialsData['burials-birth-year']; ?></td>
                   <td><?php echo $burialsData['burials-death-year']; ?></td>
 
-                  <td><a href="../public/adminAddBurial.php?burials-id=<?php echo $burialsData['burials-id']; ?>">Edit</a></td>
+                  <td><a href="../public/adminEditBurial.php?burials-id=<?php echo $burialsData['burials-id']; ?>">Edit</a></td>
                   <td><a href="../public/burialSearchIndividual.php?burials-id=<?php echo $burialsData['burials-id']; ?>">View</a></td>
                   <td><a href="../public/deleteConfirmation.php?burials-id=<?php echo $burialsData['burials-id']; ?>">Delete</a></td>
               </tr>
@@ -65,7 +65,7 @@
       </table><br>
 
 
-      <a href="addBurial.php"><button class="add">Add Burial</button></a>
+      <a href="adminAddBurial.php"><button class="add">Add Burial</button></a>
       <a href="burialSearch.php"><button class="add">Search Burials</button></a>
 
     </main>

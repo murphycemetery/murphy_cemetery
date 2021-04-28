@@ -45,8 +45,8 @@
         { ?>
           <div class="burial">
             <h2><?php echo $burialsData['burials-first-name']; ?> <?php echo $burialsData['burials-middle-name']; ?> <?php echo $burialsData['burials-last-name']; ?> </h2>
-            <?php if(isset($burialsData['burials-img-deceased'])) { ?>
-              <img src="images/<?php echo $burialsData['burials-img-deceased'];?>" alt = "<?php echo $burialsData['burials-first-name'];?> <?php echo $burialsData['burials-last-name']; ?>">
+            <?php if(isset($burialsData['burials-img-deceased']) && $burialsData['burials-img-deceased'] != "") { ?>
+              <img src="deceased_img/deceased_img_<?php echo $burialsData['burials-id'];?>.png" alt = "<?php echo $burialsData['burials-first-name'];?> <?php echo $burialsData['burials-last-name']; ?>">
             <?php } ?>
             <?php if(isset($burialsData['burials-dob']) && isset($burialsData['burials-date-of-death'])) {
                 $birthDateOld = $burialsData['burials-dob'];
@@ -62,7 +62,7 @@
             <p>Plot Row: <?php echo $burialsData['burials-plot-row']; ?></p>
             <p>Plot Number: <?php echo $burialsData['burials-plot-number']; ?></p>
             <?php if($_SESSION['loggedIn'] == "yes") { ?>
-              <a href="../public/adminAddBurial.php?burials-id=<?php echo $burialsData['burials-id']; ?>"><button>Edit</button></a>
+              <a href="../public/adminEditBurial.php?burials-id=<?php echo $burialsData['burials-id']; ?>"><button>Edit</button></a>
               <a href="../public/deleteConfirmation.php?burials-id=<?php echo $burialsData['burials-id']; ?>"><button>Delete</button></a>
             <?php } ?>
             <a href="../public/burialSearchIndividual.php?burials-id=<?php echo $burialsData['burials-id']; ?>"><button>View</button></a>

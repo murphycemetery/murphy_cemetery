@@ -15,10 +15,12 @@ class CemeteryBurials
     function set($dataArray)
     {
         $this->burialsData = $dataArray;
+
     }
 
     function sanitize($dataArray)
     {
+
         // sanitize data based on rules
           $dataArray['burials-first-name'] = filter_var($dataArray['burials-first-name'], FILTER_SANITIZE_STRING);
           $dataArray['burials-middle-name'] = filter_var($dataArray['burials-middle-name'], FILTER_SANITIZE_STRING);
@@ -45,11 +47,12 @@ class CemeteryBurials
           $dataArray['burials-father-first-name'] = filter_var($dataArray['burials-father-first-name'], FILTER_SANITIZE_STRING);
           $dataArray['burials-father-middle-name'] = filter_var($dataArray['burials-father-middle-name'], FILTER_SANITIZE_STRING);
           $dataArray['burials-father-last-name'] = filter_var($dataArray['burials-father-last-name'], FILTER_SANITIZE_STRING);
-          $dataArray['burials-img-burials'] = filter_var($dataArray['burials-img-burials'], FILTER_SANITIZE_STRING);
-          $dataArray['burials-img-grave1'] = filter_var($dataArray['burials-img-grave1'], FILTER_SANITIZE_STRING);
-          $dataArray['burials-img-grave2'] = filter_var($dataArray['burials-img-grave2'], FILTER_SANITIZE_STRING);
           $dataArray['burials-obituary'] = filter_var($dataArray['burials-obituary'], FILTER_SANITIZE_STRING);
           $dataArray['burials-family-notes'] = filter_var($dataArray['burials-family-notes'], FILTER_SANITIZE_STRING);
+          $dataArray['burials-img-deceased'] = $_FILES["burials-img-deceased"]["name"];
+          $dataArray['burials-img-grave1'] = $_FILES["burials-img-grave1"]["name"];
+          $dataArray['burials-img-grave2'] = $_FILES["burials-img-grave2"]["name"];
+
 
         return $dataArray;
     }
@@ -85,9 +88,16 @@ class CemeteryBurials
         {
 
             $stmt = $this->db->prepare(
-                "INSERT INTO burials
-                    (`burials-first-name`, `burials-middle-name`, `burials-last-name`, `burials-dob`, `burials-birth-year`, `burials-date-of-death`, `burials-death-year`, `burials-plot-row`, `burials-plot-number`, `burials-interment-date`, `burials-interment-year`, `burials-veteran`, `burials-veteran-branch`, `burials-veteran-rank`, `burials-veteran-service-time`, `burials-spouse-first-name`, `burials-spouse-middle-name`, `burials-spouse-last-name`, `burials-childrens-names`, `burials-mother-first-name`, `burials-mother-middle-name`, `burials-mother-last-name`, `burials-father-first-name`, `burials-father-middle-name`, `burials-father-last-name`, `burials-img-burials`, `burials-img-grave1`, `burials-img-grave2`, `burials-obituary`, `burials-family-notes`)
-                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                "INSERT INTO `cemetery-burials`
+                    (`burials-first-name`, `burials-middle-name`, `burials-last-name`,
+                       `burials-dob`, `burials-birth-year`, `burials-date-of-death`, `burials-death-year`,
+                        `burials-plot-row`, `burials-plot-number`, `burials-interment-date`, `burials-interment-year`,
+                         `burials-veteran`, `burials-veteran-branch`, `burials-veteran-rank`, `burials-veteran-service-time`,
+                         `burials-spouse-first-name`, `burials-spouse-middle-name`, `burials-spouse-last-name`, `burials-childrens-names`,
+                          `burials-mother-first-name`, `burials-mother-middle-name`, `burials-mother-last-name`, `burials-father-first-name`,
+                          `burials-father-middle-name`, `burials-father-last-name`, `burials-img-deceased`, `burials-img-grave1`, `burials-img-grave2`,
+                           `burials-obituary`, `burials-family-notes`)
+                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
             $isSaved = $stmt->execute(array(
                     $this->burialsData['burials-first-name'],
@@ -115,7 +125,7 @@ class CemeteryBurials
                     $this->burialsData['burials-father-first-name'],
                     $this->burialsData['burials-father-middle-name'],
                     $this->burialsData['burials-father-last-name'],
-                    $this->burialsData['burials-img-burials'],
+                    $this->burialsData['burials-img-deceased'],
                     $this->burialsData['burials-img-grave1'],
                     $this->burialsData['burials-img-grave2'],
                     $this->burialsData['burials-obituary'],
@@ -132,7 +142,7 @@ class CemeteryBurials
         else
         {
             $stmt = $this->db->prepare(
-                "UPDATE burials SET
+                "UPDATE `cemetery-burials` SET
                     `burials-first-name` = ?,
                     `burials-middle-name` = ?,
                     `burials-last-name` = ?,
@@ -158,7 +168,7 @@ class CemeteryBurials
                     `burials-father-first-name` = ?,
                     `burials-father-middle-name` = ?,
                     `burials-father-last-name` = ?,
-                    `burials-img-burials` = ?,
+                    `burials-img-deceased` = ?,
                     `burials-img-grave1` = ?,
                     `burials-img-grave2` = ?,
                     `burials-obituary`= ?,
@@ -193,7 +203,7 @@ class CemeteryBurials
               $this->burialsData['burials-father-first-name'],
               $this->burialsData['burials-father-middle-name'],
               $this->burialsData['burials-father-last-name'],
-              $this->burialsData['burials-img-burials'],
+              $this->burialsData['burials-img-deceased'],
               $this->burialsData['burials-img-grave1'],
               $this->burialsData['burials-img-grave2'],
               $this->burialsData['burials-obituary'],
@@ -201,17 +211,110 @@ class CemeteryBurials
                 )
             );
         }
-
+        //var_dump($isSaved);
         return $isSaved;
     }
 
     function validate()
     {
-        $isValid = true;
+        //validate fields
+        $validForm = true;
+        //var_dump($this->burialsData);
+        //validate first name
+        if (empty($this->burialsData['burials-first-name']))
+        {
+            $this->errors['burials-first-name'] = "*Please enter the first name";
+            $isValid = false;
+        }
+
+
+        //validate birth date
+      /*  if(empty($this->burialsData['burials-dob'])) {
+            $this->errors['burials-dob'] = "";
+        }
+        elseif(!preg_match('/^(18|19|20|21)\d\d[/ \/.](0[1-9]|1[012])[/ \/.](0[1-9]|[12][0-9]|3[01])$/', $this->burialsData['burials-dob'])){
+            $this->errors['burials-dob'] = "Please enter a valid date (mm/dd/yyyy)";
+            $this->burialsData['burials-dob'] = "";
+            $validForm = false;
+        } */
+
+        //validate birth year
+        if(empty($this->burialsData['burials-birth-year'])){
+            $this->errors['burials-birth-year'] = "";
+        }
+        elseif(!preg_match("/(?:(?:18|19|20|21)[0-9]{2})/", $this->burialsData['burials-birth-year'])){
+            $this->errors['burials-birth-year'] = "Please enter a valid year (yyyy)";
+            $this->burialsData['burials-birth-year'] = "";
+            $validForm = false;
+        }
+
+        //validate death date
+      /*  if(empty($this->burialsData['burials-date-of-death'])){
+            $this->errors['burials-date-of-death'] = "";
+        }
+        elseif(!preg_match('/^(18|19|20|21)\d\d[/ \/.](0[1-9]|1[012])[/ \/.](0[1-9]|[12][0-9]|3[01])$/', $this->burialsData['burials-date-of-death'])){
+          $this->errors['burials-date-of-death'] = "Please enter a valid date (mm/dd/yyyy)";
+          $this->burialsData['burials-date-of-death'] = "";
+          $validForm = false;
+        } */
+
+        //validate death year
+        if(empty($this->burialsData['burials-death-year'])){
+            $this->errors['burials-death-year'] = "";
+        }
+        elseif(!preg_match("/(?:(?:18|19|20|21)[0-9]{2})/", $this->burialsData['burials-death-year'])){
+            $this->errors['burials-death-year'] = "Please enter a valid year (yyyy)";
+            $this->burialsData['burials-death-year'] = "";
+            $validForm = false;
+        }
+
+        //burial death date
+      /*  if(empty($this->burialsData['burials-interment-date'])){
+            $this->errors['burials-interment-date'] = "";
+        }
+        elseif(!preg_match('/^(18|19|20|21)\d\d[/ \/.](0[1-9]|1[012])[/ \/.](0[1-9]|[12][0-9]|3[01])$/', $this->burialsData['burials-interment-date'])){
+          $this->errors['burials-interment-date'] = "Please enter a valid date (mm/dd/yyyy)";
+          $this->burialsData['burials-interment-date'] = "";
+          $validForm = false;
+        } */
+
+        //validate burial year
+        if(empty($this->burialsData['burials-interment-year'])){
+            $this->errors['burials-interment-year'] = "";
+        }
+        elseif(!preg_match("/(?:(?:18|19|20|21)[0-9]{2})/", $this->burialsData['burials-interment-year'])){
+            $this->errors['burials-interment-year'] = "Please enter a valid year (yyyy)";
+            $this->burialsData['burials-interment-year'] = "";
+            $validForm = false;
+        }
+
+        //validate plot row
+        if(empty($this->burialsData['burials-plot-row'])){
+            $this->errors['burials-plot-row'] = "Please enter a plot row";
+            $this->burialsData['burials-plot-row'] = "";
+            $validForm = false;
+        }
+        elseif(!preg_match("/^\d{0,4}$/", $this->burialsData['burials-plot-row'])){
+            $this->errors['burials-plot-row'] = "Please enter a valid #";
+            $this->burialsData['burials-plot-row'] = "";
+            $validForm = false;
+        }
+
+        //validate plot Num
+        if(empty($this->burialsData['burials-plot-number'])){
+            $this->errors['burials-plot-number'] = "Please enter a plot number";
+            $this->burialsData['burials-plot-row'] = "";
+            $validForm = false;
+        }
+        elseif(!preg_match("/^\d{0,4}$/", $this->burialsData['burials-plot-number'])){
+            $this->errors['burials-plot-number'] = "Please enter a valid #";
+            $this->burialsData['burials-plot-number'] = "";
+            $validForm = false;
+        }
 
 
         // if an error, store to errors using column name as key
-
+        /*
         // validate the data elements in articleData property
         if (empty($this->burialsData['burials-first-name']))
         {
@@ -225,7 +328,7 @@ class CemeteryBurials
             $isValid = false;
         }
 
-        /*
+
         if (isset($this->burialsData['burials-dob']))
         {
           if (preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $this->burialsData['burials-dob'])
@@ -234,7 +337,7 @@ class CemeteryBurials
             $isValid = false;
           }
         }
-        */
+
 
         if (isset($this->burialsData['burials-birth-year']))
         { $currentYear = date('Y');
@@ -256,7 +359,7 @@ class CemeteryBurials
             $isValid = false;
           }
         }
-        */
+
 
         if (isset($this->burialsData['burials-death-year']))
         { $currentYear = date('Y');
@@ -269,7 +372,7 @@ class CemeteryBurials
           }
         }
 
-        /*
+
         if (isset($this->burialsData['burials-interment-date']))
         {
           if (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $this->burialsData['burials-interment-date'])
@@ -278,7 +381,7 @@ class CemeteryBurials
             $isValid = false;
           }
         }
-        */
+
 
         if (isset($this->burialsData['burials-interment-year']))
         { $currentYear = date('Y');
@@ -302,10 +405,10 @@ class CemeteryBurials
             $this->errors['burials-plot-number'] = "Please enter a plot number";
             $isValid = false;
         }
+        */
+        //var_dump($validForm);
 
-
-
-        return $isValid;
+        return $validForm;
     }
 
     function getList($sortColumn = null, $sortDirection = null, $firstNameText = null, $lastNameText = null, $page = null)
@@ -450,10 +553,10 @@ function getPages($sortColumn = null, $sortDirection = null, $filterColumn = nul
 
 function authorizeBurials($inFirstName, $inLastName){
   $burials_id=null;
-  $checkburialssql="SELECT burials-id, burials-first-name, burials-last-name
-                FROM cemetery-burials
-                WHERE burials-first-name = :burials-first-name
-                AND burials-last-name = :burials-last-name";
+  $checkburialssql="SELECT `burials-id`, `burials-first-name`, `burials-last-name`
+                FROM `cemetery-burials`
+                WHERE `burials-first-name` = :`burials-first-name`
+                AND `burials-last-name` = :`burials-last-name`";
                 $query= $this->db->prepare($checkburialssql);
                                     $query->bindParam('burials-first-name', $inFirstName, PDO::PARAM_STR);
                                     $query->bindValue('burials-last-name', $inLastName, PDO::PARAM_STR);
@@ -489,6 +592,21 @@ function authorizeBurials($inFirstName, $inLastName){
     //var_dump($deleteMsg);
 
     return $deleteMsg;
+  }
+
+  function saveBurialImage() {
+    move_uploaded_file($_FILES['burials-img-deceased']['tmp_name'],
+    "deceased_img/" . "deceased_img_" . $burial_id . ".png");
+  }
+
+  function saveGrave1Image() {
+    move_uploaded_file($_FILES['burials-img-grave1']['tmp_name'],
+    "grave_1_img/" . "grave_1_img_" . $burial_id . ".png");
+  }
+
+  function saveGrave2Image() {
+    move_uploaded_file($_FILES['burials-img-grave2']['tmp_name'],
+    "grave_2_img/" . "grave_2_img_" . $burial_id . ".png");
   }
 }
 ?>
