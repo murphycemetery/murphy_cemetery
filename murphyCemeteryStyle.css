@@ -67,6 +67,29 @@ border: 2px solid #272635;
 padding: 7px;
 }
 
+#confirm {
+color: white;
+font-weight: bold;
+background-color: #2699FB;
+border: 2px solid #272635;
+padding: 7px;
+display: flex;
+justify-content: center;
+margin-right: auto;
+margin-left: auto;
+text-align: center;
+margin-bottom: 30px;
+}
+
+.delete {
+display: flex;
+justify-content: center;
+margin-right: auto;
+margin-left: auto;
+text-align: center;
+margin-bottom: 30%;
+}
+
 /*Header content*/
 
 .navbar-brand{
