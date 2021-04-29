@@ -289,6 +289,10 @@
                     <input style="padding-left: 25px;" type="file" name="imgGrave2"/>
                 </div>
 
+                <input type = "hidden" name="currentDeceasedImg" value = "<?php echo $burialsImageDeceased ?>">
+                <input type = "hidden" name="currentGrave1Img" value = "<?php echo $burialsImageGrave1 ?>">
+                <input type = "hidden" name="currentGrave2Img" value = "<?php echo $burialsImageGrave2?>">
+
                 <hr>
 
                 <input class="buttonStyle" type="submit" name="submitForm" value="Submit" />

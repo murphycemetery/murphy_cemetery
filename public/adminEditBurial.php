@@ -36,6 +36,7 @@ if($_SESSION['loggedIn'] == "yes") {
     $obituary = "";
     $familyNotes = "";
 
+
     //create error variables
     $firstNameERR = "";
     $birthDateERR = "";
@@ -86,6 +87,10 @@ if($_SESSION['loggedIn'] == "yes") {
         $obituary = $_POST["obituary"];
         $familyNotes = $_POST["familyNotes"];
 
+        $currentImgDeceased = $_POST["currentDeceasedImg"];
+        $currentImgGrave1 = $_POST["currentGrave1Img"];
+        $currentImgGrave2 = $_POST["currentGrave2Img"];
+
         //for check boxes
         $obituaryCheckBox = $_POST["obituaryCheckBox"];
         $familyNotesCheckBox = $_POST["familyNotesCheckBox"];
@@ -93,6 +98,35 @@ if($_SESSION['loggedIn'] == "yes") {
 
         //validate fields
         $validForm = true;
+
+        //var_dump($imgDeceased);
+        //var_dump($currentImgGrave1);
+        //var_dump($currentImgDeceased);die;
+        if($imgDeceased != "") {
+          $imgDeceased = $imgDeceased;
+        } else if($imgDeceased == "" && $currentImgDeceased =! ""){
+            $imgDeceased = $currentImgDeceased;
+        } else if($imgDeceased == "" && $currentImgDeceased == "") {
+          $imgDeceased = "";
+        }
+
+        var_dump("image Deceased" . $imgDeceased);
+
+        if($imgGrave1 == "" && $currentImgGrave1 =! ""){
+            $imgGrave1 = $currentImgGrave1;
+        } else if($imgGrave1 == "" && $currentImgGrave1 == "") {
+          $imgGrave1 = null;
+        } else if($imgGrave1 != "") {
+          $imgGrave1 = $imgGrave1;
+        }
+
+        if($imgGrave2 == "" && $currentImgGrave2 =! ""){
+            $imgGrave2 = $currentImgGrave2;
+        } else if($imgGrave2 == "" && $currentImgGrave2 == "") {
+          $imgGrave2 = null;
+        } else if($imgGrave2 != "") {
+          $imgGrave2 = $imgGrave2;
+        }
 
         //validate first name
 		    if($fName == ""){
@@ -162,18 +196,6 @@ if($_SESSION['loggedIn'] == "yes") {
 
         if($fatherLName == ""){
             $fatherLName = null;
-        }
-
-        if($imgDeceased == ""){
-            $imgDeceased = null;
-        }
-
-        if($imgGrave1 == ""){
-            $imgGrave1 = null;
-        }
-
-        if($imgGrave2 == ""){
-            $imgGrave2 = null;
         }
 
         if($obituary == ""){
@@ -311,6 +333,17 @@ if($_SESSION['loggedIn'] == "yes") {
             $intermentYear = "'$intermentYear'";
           }
 
+          if ($imgDeceased == 1) {
+            $imgDeceased = null;
+          }
+
+          if ($imgGrave1 == 1) {
+            $imgGrave1 = null;
+          }
+
+          if ($imgGrave2 == 1) {
+            $imgGrave2 = null;
+          }
 
         $sql = "UPDATE `cemetery-burials` SET ";
          $sql .= "`burials-first-name`='$fName', ";
@@ -462,6 +495,7 @@ if($_SESSION['loggedIn'] == "yes") {
      $burialsImageGrave2 = $row['burials-img-grave2'];
      $burialsObituary = $row['burials-obituary'];
      $burialsFamilyNotes = $row['burials-family-notes'];
+
    }
 
    catch(PDOException $e)

@@ -29,16 +29,18 @@
     <main>
       <div class="burial">
         <div class = "view">
+        <?php if($_SESSION['loggedIn'] == "yes") { ?>
         Burial ID: <?php echo (isset($burialDataArray['burials-id']) ? $burialDataArray['burials-id'] : ''); ?><br>
-        <?php if($burialDataArray['burials-img-deceased'] != "") { ?>
+      <?php } ?>
+        <?php if($burialDataArray['burials-img-deceased']) { ?>
           <img src = "deceased_img/deceased_img_<?php echo $burialDataArray['burials-id'];?>.png" alt = "<?php echo $burialDataArray['burials-first-name']; $burialDataArray['burials-last-name'];?> " />
         <?php } ?>
 
-        <?php if($burialDataArray['burials-img-grave1'] != "" ) { ?>
+        <?php if($burialDataArray['burials-img-grave1']) { ?>
           <img src = "grave_1_img/grave_1_img_<?php echo $burialDataArray['burials-id'];?>.png" alt = "Grave row: <?php echo $burialDataArray['burials-plot-row'];?> number: <?php echo $burialDataArray['burials-plot-number'];?> " />
         <?php } ?>
 
-        <?php if($burialDataArray['burials-img-grave2'] != "") { ?>
+        <?php if($burialDataArray['burials-img-grave2']) { ?>
           <img src = "grave_2_img/grave_2_img_<?php echo $burialDataArray['burials-id'];?>.png" alt = "Grave row: <?php echo $burialDataArray['burials-plot-row'];?> number: <?php echo $burialDataArray['burials-plot-number'];?> " />
         <?php }?>
         <h2 class="fullName"><?php echo (isset($burialDataArray['burials-first-name']) ? $burialDataArray['burials-first-name'] : ''); ?>
@@ -69,28 +71,28 @@
               <p class = "service">Years of Service: <?php echo (isset($burialDataArray['burials-veteran-service-time']) ? $burialDataArray['burials-veteran-service-time'] : '');?></p>
 
           <?php  } ?>
-            <?php if(!is_null($burialDataArray['burials-spouse-first-name']) || !is_null($burialDataArray['burials-father-first-name']) && !is_null($burialDataArray['burials-mother-first-name'])) { ?>
+            <?php if($burialDataArray['burials-spouse-first-name'] || $burialDataArray['burials-father-first-name'] && $burialDataArray['burials-mother-first-name']) { ?>
             <h4>Family Information</h4>
           <?php } ?>
-            <?php if(!is_null($burialDataArray['burials-spouse-first-name']) && !is_null($burialDataArray['burials-spouse-last-name'])) { ?>
+            <?php if($burialDataArray['burials-spouse-first-name'] && $burialDataArray['burials-spouse-last-name']) { ?>
               <p class = "spouse">Spouse: <?php echo (isset($burialDataArray['burials-spouse-first-name']) ? $burialDataArray['burials-spouse-first-name'] : '');?>
                                 <?php echo (isset($burialDataArray['burials-spouse-middle-name']) ? $burialDataArray['burials-spouse-middle-name'] : '');?>
                                 <?php echo (isset($burialDataArray['burials-spouse-last-name']) ? $burialDataArray['burials-spouse-last-name'] : ''); ?></p>
             <?php } ?>
 
-            <?php if(!is_null($burialDataArray['burials-mother-first-name']) && !is_null($burialDataArray['burials-mother-last-name'])) { ?>
+            <?php if($burialDataArray['burials-mother-first-name'] && $burialDataArray['burials-mother-last-name']) { ?>
               <p class = "mother">Mother: <?php echo (isset($burialDataArray['burials-mother-first-name']) ? $burialDataArray['burials-mother-first-name'] : '');?>
                                 <?php echo (isset($burialDataArray['burials-mother-middle-name']) ? $burialDataArray['burials-mother-middle-name'] : '');?>
                                 <?php echo (isset($burialDataArray['burials-mother-last-name']) ? $burialDataArray['burials-mother-last-name'] : ''); ?></p>
             <?php } ?>
 
-            <?php if(!is_null($burialDataArray['burials-father-first-name']) && !is_null($burialDataArray['burials-father-last-name'])) { ?>
+            <?php if($burialDataArray['burials-father-first-name'] && $burialDataArray['burials-father-last-name']) { ?>
               <p class = "father">Father: <?php echo (isset($burialDataArray['burials-father-first-name']) ? $burialDataArray['burials-father-first-name'] : '');?>
                                 <?php echo (isset($burialDataArray['burials-father-middle-name']) ? $burialDataArray['burials-father-middle-name'] : '');?>
                                 <?php echo (isset($burialDataArray['burials-father-last-name']) ? $burialDataArray['burials-father-last-name'] : ''); ?></p>
             <?php } ?>
 
-            <?php if(!is_null($burialDataArray['burials-childrens-names'])) { ?>
+            <?php if($burialDataArray['burials-childrens-names']) { ?>
               <p class = "children">Children: <?php echo (isset($burialDataArray['burials-childrens-names']) ? $burialDataArray['burials-childrens-names'] : '');?></p>
             <?php } ?>
 
