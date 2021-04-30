@@ -101,31 +101,30 @@ if($_SESSION['loggedIn'] == "yes") {
 
         //var_dump($imgDeceased);
         //var_dump($currentImgGrave1);
-        //var_dump($currentImgDeceased);die;
-        if($imgDeceased != "") {
-          $imgDeceased = $imgDeceased;
-        } else if($imgDeceased == "" && $currentImgDeceased =! ""){
+        //var_dump($currentImgDeceased);
+        if($imgDeceased == "" && $currentImgDeceased != ""){
             $imgDeceased = $currentImgDeceased;
         } else if($imgDeceased == "" && $currentImgDeceased == "") {
-          $imgDeceased = "";
+          $imgDeceased = null;
+        } else if($imgDeceased != "") {
+          $imgDeceased;
         }
+        //var_dump($imgDeceased);
 
-        var_dump("image Deceased" . $imgDeceased);
-
-        if($imgGrave1 == "" && $currentImgGrave1 =! ""){
+        if($imgGrave1 == "" && $currentImgGrave1 != ""){
             $imgGrave1 = $currentImgGrave1;
         } else if($imgGrave1 == "" && $currentImgGrave1 == "") {
           $imgGrave1 = null;
         } else if($imgGrave1 != "") {
-          $imgGrave1 = $imgGrave1;
+          $imgGrave1;
         }
 
-        if($imgGrave2 == "" && $currentImgGrave2 =! ""){
+        if($imgGrave2 == "" && $currentImgGrave2 != ""){
             $imgGrave2 = $currentImgGrave2;
         } else if($imgGrave2 == "" && $currentImgGrave2 == "") {
           $imgGrave2 = null;
         } else if($imgGrave2 != "") {
-          $imgGrave2 = $imgGrave2;
+          $imgGrave2;
         }
 
         //validate first name

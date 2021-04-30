@@ -12,5 +12,5 @@ session_unset();
 $_SESSION['loggedIn'] = 'no';
 
 //redirect to login page
-header('location: burialSearch.php');
+header('location: index.php');
 ?>
