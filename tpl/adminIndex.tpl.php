@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Murphy Cemetery - Burial Search</title>
+    <title>Admin Home Murphy Cemetery</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -107,10 +107,8 @@
               <p class="burialLabel">ID&nbsp;-&nbsp;<a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>?sortColumn=`burials-id`&sortDirection=ASC">A</a>&nbsp;<a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>?sortColumn=`burials-id`&sortDirection=DESC">D</a> <br>
               First Name&nbsp;-&nbsp;<a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>?sortColumn=`burials-first-name`&sortDirection=ASC">A</a>&nbsp;<a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>?sortColumn=`burials-first-name`&sortDirection=DESC">D</a> <br>
               Last Name&nbsp;-&nbsp;<a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>?sortColumn=`burials-last-name`&sortDirection=ASC">A</a>&nbsp;<a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>?sortColumn=`burials-last-name`&sortDirection=DESC">D</a> <br>
-              Birth Date&nbsp;-&nbsp;<a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>?sortColumn=`burials-dob`&sortDirection=ASC">A</a>&nbsp;<a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>?sortColumn=`burials-dob`&sortDirection=DESC">D</a> <br>
-              Death Date&nbsp;-&nbsp;<a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>?sortColumn=`burials-date-of-death`&sortDirection=ASC">A</a>&nbsp;<a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>?sortColumn=`burials-date-of-death`&sortDirection=DESC">D</a> <br>
-              Birth Year&nbsp;-&nbsp;<a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>?sortColumn=`burials-birth-year`&sortDirection=ASC">A</a>&nbsp;<a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>?sortColumn=`burials-birth-year`&sortDirection=DESC">D</a> <br>
-              Death Year&nbsp;-&nbsp;<a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>?sortColumn=`burials-death-year`&sortDirection=ASC">A</a>&nbsp;<a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>?sortColumn=`burials-death-year`&sortDirection=DESC">D</a> <br>
+              Plot Row&nbsp;-&nbsp;<a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>?sortColumn=`burials-plot-row`&sortDirection=ASC">A</a>&nbsp;<a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>?sortColumn=`burials-plot-row`&sortDirection=DESC">D</a> <br>
+              Plot Number&nbsp;-&nbsp;<a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>?sortColumn=`burials-plot-number`&sortDirection=ASC">A</a>&nbsp;<a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>?sortColumn=`burials-plot-number`&sortDirection=DESC">D</a> <br>
               &nbsp;
               &nbsp;
               &nbsp;</p>
@@ -119,12 +117,10 @@
           { ?>
 
                   <p class="burial"><?php echo "ID: " . $burialsData['burials-id']; ?> |
-                  <?php echo "First Name: " . $burialsData['burials-first-name']; ?> |
-                  <?php echo "Last Name: " . $burialsData['burials-last-name']; ?> |
-                  <?php echo "Birth Date: " . $burialsData['burials-dob']; ?> |
-                  <?php echo "Death Date: " . $burialsData['burials-date-of-death']; ?> |
-                  <?php echo "Birth Year: " . $burialsData['burials-birth-year']; ?> |
-                  <?php echo "Death Year: " . $burialsData['burials-death-year']; ?> |
+                  <?php echo $burialsData['burials-first-name']; ?> 
+                  <?php echo $burialsData['burials-last-name']; ?> |
+                  <?php echo "Plot Row: " . $burialsData['burials-plot-row']; ?> |
+                  <?php echo "Plot Number: " . $burialsData['burials-plot-number']; ?> |
 
                   <a href="../public/adminEditBurial.php?burials-id=<?php echo $burialsData['burials-id']; ?>">Edit</a> |
                   <a href="../public/burialSearchIndividual.php?burials-id=<?php echo $burialsData['burials-id']; ?>">View</a> |

@@ -65,7 +65,7 @@
 
             if($validForm) {
 
-                        $toEmail = 'admin@raymondagbor.name';
+                        $toEmail = 'ericajanemann@gmail.com';
                         $subject = 'Contact form submission from '. $firstName . " " . $lastName;
                         $emailBody = '<h2>Contact Form Submission</h2>
                                       <h3>Name</h3><p>'. $firstName . ' ' . $lastName.'</p>
@@ -83,7 +83,7 @@
                         $emailHeaders = "MIME-Version: 1.0" . "\r\n";
                         $emailHeaders .= "Content-Type: text/html; charset=UTF-8" . "\r\n";
 
-                        $emailHeaders .= "From: " .$firstName . '' . $lastName . "<" .$email. ">". "\r\n";
+                        $emailHeaders .= "From: Contact " .$firstName . ' ' . $lastName . "<" .'contact@ericamanning.com'. ">". "\r\n";
 
                         if (mail($toEmail, $subject, $emailBody, $emailHeaders)) {
                             $msg = "Your email has been sent, we will get back to you as soon as possible. Thanks!";

@@ -8,8 +8,12 @@ class Users
 
     function __construct()
     {
-      $this->db = new PDO('mysql:host=localhost;dbname=murphy-cemetery;charset=utf8',
-          'murphy_admin', 'MurphyCemetery_Group2');
+      //local
+      /*$this->db = new PDO('mysql:host=localhost;dbname=murphy-cemetery;charset=utf8',
+          'murphy_admin', 'MurphyCemetery_Group2');*/
+      //host
+      $this->db = new PDO('mysql:host=localhost;dbname=emanning11_murphy-cemetery;charset=utf8',
+          'emanning11_murphy-cemetery', 'MurphyCemetery_Group2');
     }
 
     function set($dataArray)

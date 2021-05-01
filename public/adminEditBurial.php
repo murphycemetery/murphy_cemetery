@@ -210,55 +210,55 @@ if($_SESSION['loggedIn'] == "yes") {
             $birthDateERR = "";
             $birthDate = null;
         }
-        elseif(!preg_match('/^(18|19|20|21)\d\d[- \/.](0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])$/', $birthDate)){
+        /*elseif(!preg_match('/^(18|19|20|21)\d\d[- \/.](0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])$/', $birthDate)){
             $birthDateERR = "Please enter a valid date (mm/dd/yyyy)";
             $birthDate = null;
             $validForm = false;
-        }
+        }*/
 
         //validate birth year
-        if($birthYear == "" || $birthYear == null){
+        if($birthYear == ""){
             $birthYearERR = "";
             $birthYear = null;
-        }
-        elseif(!preg_match("/(?:(?:18|19|20|21)[0-9]{2})/", $birthYear)){
+        } elseif(!preg_match("/(?:(?:17|18|19|20|21)[0-9]{2})/", $birthYear)){
             $birthYearERR = "Please enter a valid year (yyyy)";
             $birthYear = null;
             $validForm = false;
         }
+
 
         //validate death date
         if($deathDate == ""){
             $deathDate = null;
             $deathDateERR = "";
         }
-        elseif(!preg_match('/^(18|19|20|21)\d\d[- \/.](0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])$/', $deathDate)){
+      /*  elseif(!preg_match('/^(18|19|20|21)\d\d[- \/.](0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])$/', $deathDate)){
             $deathDateERR = "Please enter a valid date (mm/dd/yyyy)";
             $deathDate = null;
             $validForm = false;
-        }
+        } */
 
         //validate death year
         if($deathYear == ""){
             $deathYearERR = "";
             $deathYear = null;
-        }
-        elseif(!preg_match("/(?:(?:18|19|20|21)[0-9]{2})/", $deathYear)){
+        } elseif(!preg_match("/(?:(?:18|19|20|21)[0-9]{2})/", $deathYear)){
             $deathYearERR = "Please enter a valid year (yyyy)";
             $deathYear = null;
             $validForm = false;
         }
+
 
         //burial death date
         if($intermentDate == ""){
             $intermentDate = null;
             $intermentDateERR = "";
         }
-        elseif(!preg_match('/^(18|19|20|21)\d\d[- \/.](0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])$/', $intermentDate)){
+        /*elseif(!preg_match('/^(18|19|20|21)\d\d[- \/.](0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])$/', $intermentDate)){
             $intermentDateERR = "Please enter a valid date (mm/dd/yyyy)";
             $intermentDate = null;
             $validForm = false;
-        }
+        }*/
 
         //validate burial year
         if($intermentYear == ""){

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Murphy Cemetery - Burial Search</title>
+    <title>Burial Search Murphy Cemetery</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -29,7 +29,7 @@
       }
 
       .burial img {
-      
+
       }
     </style>
     <script>
@@ -131,9 +131,9 @@
             <?php echo (isset($burialDataArray['burials-middle-name']) ? $burialDataArray['burials-middle-name'] : ''); ?>
             <?php echo (isset($burialDataArray['burials-last-name']) ? $burialDataArray['burials-last-name'] : ''); ?></h1>
 
-          <?php if(!is_null($burialDataArray['burials-dob']) && !is_null($burialDataArray['burials-date-of-death'])) { ?>
+          <?php if(!is_null($burialDataArray['burials-dob']) || !is_null($burialDataArray['burials-date-of-death'])) { ?>
             <p class = "datesLived"><?php echo $birthDateNew ; ?> - <?php echo $deathDateNew; ?></p>
-          <?php } else if(!is_null($burialDataArray['burials-birth-year']) && !is_null($burialDataArray['burials-death-year'])){ ?>
+          <?php } else if(!is_null($burialDataArray['burials-birth-year']) || !is_null($burialDataArray['burials-death-year'])){ ?>
             <p class = "yearsLived"><?php echo (isset($burialDataArray['burials-birth-year']) ? $burialDataArray['burials-birth-year'] : ''); ?> -
             <?php echo (isset($burialDataArray['burials-death-year']) ? $burialDataArray['burials-death-year'] : ''); ?></p>
           <?php } ?>
@@ -150,10 +150,15 @@
 
             <?php if($burialDataArray['burials-veteran'] == "y") { ?>
               <h2>Veteran Information</h2>
-              <p class = "branch">Branch: <?php echo (isset($burialDataArray['burials-veteran-branch']) ? $burialDataArray['burials-veteran-branch'] : '');?></p>
-              <p class = "rank">Rank: <?php echo (isset($burialDataArray['burials-veteran-rank']) ? $burialDataArray['burials-veteran-rank'] : '');?></p>
-              <p class = "service">Years of Service: <?php echo (isset($burialDataArray['burials-veteran-service-time']) ? $burialDataArray['burials-veteran-service-time'] : '');?></p><br>
-
+              <?php if($burialDataArray['burials-veteran-branch']) { ?>
+                <p class = "branch">Branch: <?php echo (isset($burialDataArray['burials-veteran-branch']) ? $burialDataArray['burials-veteran-branch'] : '');?></p>
+              <?php } ?>
+              <?php if($burialDataArray['burials-veteran-rank']) { ?>
+                <p class = "rank">Rank: <?php echo (isset($burialDataArray['burials-veteran-rank']) ? $burialDataArray['burials-veteran-rank'] : '');?></p>
+              <?php } ?>
+              <?php if($burialDataArray['burials-veteran-service-time']) { ?>
+                <p class = "service">Years of Service: <?php echo (isset($burialDataArray['burials-veteran-service-time']) ? $burialDataArray['burials-veteran-service-time'] : '');?></p><br>
+              <?php } ?>
           <?php  } ?>
             <?php if($burialDataArray['burials-spouse-first-name'] || $burialDataArray['burials-father-first-name'] && $burialDataArray['burials-mother-first-name']) { ?>
             <h2>Family Information</h2>
