@@ -40,6 +40,7 @@
 
       .burial img {
         border: thin solid black;
+        width: 100%;
       }
     </style>
 

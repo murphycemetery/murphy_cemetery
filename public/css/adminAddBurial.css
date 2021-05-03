@@ -13,8 +13,7 @@
     background-color:#E8E6E3 ;
     font-size: 20px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     width: 100%;
     box-shadow: 2px 2px 2px;
     border-radius: 5px;
@@ -126,7 +125,9 @@ float: none;
 @media  screen and (max-width: 400px){
 
 #displayArea {
-width: 100%;
+width: 95%;
+margin: 0 auto;
+padding: 0;
 }
 
 .inputCols1, .inputCols2, .inputCols2Plot, .inputCols3 {
@@ -139,15 +140,15 @@ display: block;
 @media  screen and (max-width: 330px){
 
 body {
-width: 112%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 }
 
 @media  screen and (max-width: 290px){
 
-body {
-width: 128%;
-}
+  
 
 }

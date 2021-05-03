@@ -24,7 +24,7 @@ if (isset($_POST['login']))
     }
     else
     {
-        echo "Login failed";
+        $loginFailed = "Login failed";
     }
 }
 

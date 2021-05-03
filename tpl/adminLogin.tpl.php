@@ -69,7 +69,7 @@
 <body>
     <div id="displayArea">
         <h1>Administrator Login</h1>
-
+        <h2 style="color: red;"><?php echo $loginFailed; ?></h2>
         <div class="formStyle">
             <form method="POST" name="loginForm" action="../public/adminLogin.php">
                 <label class="col-25">Username:</label>
