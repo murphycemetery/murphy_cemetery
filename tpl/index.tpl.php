@@ -5,8 +5,8 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="murphy cemetery site">
-<meta name="keywords" content="history, cemetery">
+<meta name="description" content="Murphy Cemetery ">
+<meta name="keywords" content="Murphy Cemetery, history, cemetery">
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -150,7 +150,7 @@ $(document).ready(function(){
 	</nav>
     </header>
 <body>
-<div class="col-sm-12" style="background: linear-gradient(rgba(265,265,265, .5), rgba(20,20,20, .5)), url(images/murphyCemetery.jpg);height:60vh;min-height:20px; background-size:cover;background-repeat: no-repeat;">
+<div class="col-sm-12" aria-label= "Murphy Cemetery entry" style="background: linear-gradient(rgba(265,265,265, .5), rgba(20,20,20, .5)), url(images/murphyCemetery.jpg);height:60vh;min-height:20px; background-size:cover;background-repeat: no-repeat;">
 <h1 id="heading">WELCOME TO MURPHY CEMETERY!</h1>
 </div>
 
@@ -160,7 +160,7 @@ $(document).ready(function(){
 <hr>
 <div class="col-lg-4 text-center" style="position: relative; padding-top: 15px;">
  <figure><main>
-    <img class="img" src="images/murphyCemetery-12.jpg" alt="placeholder image"  width="100%" height="323px">
+    <img class="img" src="images/murphyCemetery-12.jpg" alt="Murphy Cemetery grave"  width="100%" height="323px">
     </main>
        <div class="caption">
             <h2><a href="about.php">ABOUT/HISTORY</a></h2>
@@ -170,7 +170,7 @@ $(document).ready(function(){
 
  <div class="col-lg-4 text-center" style="padding-bottom: 10px; position: relative; padding-top: 15px;">
     <figure><main>
-          <img class="img" src="images/murphyCemetery-4.jpg" alt="placeholder image" width="100%" height="323px">
+          <img class="img" src="images/murphyCemetery-4.jpg" alt="Murphy Cemetery graves" width="100%" height="323px">
           </main>
              <div class="caption">
                 <h2><a href="burialSearch.php">LOCATE A LOVED<br>ONE</a></h2>
@@ -180,7 +180,7 @@ $(document).ready(function(){
 
  <div class="col-lg-4 text-center" style="padding-bottom: 10px; position: relative; padding-top: 15px;">
      <figure><main>
-            <img class="img" src="images/murphyCemetery-9.jpg" alt="placeholder image" width="100%" height="323px">
+            <img class="img" src="images/murphyCemetery-9.jpg" alt="Murphy Cemetery graves" width="100%" height="323px">
             </main>
                <div class="caption">
                   <h2><a href="contact.php">CONTACT</a></h2>

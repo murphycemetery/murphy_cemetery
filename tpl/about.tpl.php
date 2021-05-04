@@ -5,8 +5,8 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="murphy cemetery about">
-<meta name="keywords" content="history, cemetery">
+<meta name="description" content="Murphy Cemetery About">
+<meta name="keywords" content="Murphy Cemetery, about, history, cemetery">
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -156,7 +156,7 @@ function readMore() {
 
 <div class="column">
 <div class="col-sm-4 text-center">
-<img class="pic" style="padding-bottom: 10px; position: relative;" src="images/murphyCemetery-10.jpg" alt="placeholder cemetery image" height="300px">
+<img class="pic" style="padding-bottom: 10px; position: relative;" src="images/murphyCemetery-10.jpg" alt="Murphy Cemetery grave" height="300px">
 </div>
 
 <div class="col-sm-8">
@@ -182,7 +182,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 </div>
 
 <div class="col-sm-4 text-center">
-<img class="pic" style="padding-bottom: 10px;" src="images/murphyCemetery-14.jpg" alt="placeholder cemetery image" height="300px">
+<img class="pic" style="padding-bottom: 10px;" src="images/murphyCemetery-14.jpg" alt="Murphy Cemetery entry" height="300px">
 </div>
 </div>
 

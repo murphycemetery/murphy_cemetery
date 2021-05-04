@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <meta name="description" content="Murphy Cemetery Burial">
+    <meta name="keywords" content="Murphy Cemetery, burial, cemetery">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Burial Search Murphy Cemetery</title>

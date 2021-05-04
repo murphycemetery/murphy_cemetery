@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <meta name="description" content="Murphy Cemetery Admin">
+    <meta name="keywords" content="Murphy Cemetery, cemetery">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Admin Home Murphy Cemetery</title>
@@ -117,7 +119,7 @@
           { ?>
 
                   <p class="burial"><?php echo "ID: " . $burialsData['burials-id']; ?> |
-                  <?php echo $burialsData['burials-first-name']; ?> 
+                  <?php echo $burialsData['burials-first-name']; ?>
                   <?php echo $burialsData['burials-last-name']; ?> |
                   <?php echo "Plot Row: " . $burialsData['burials-plot-row']; ?> |
                   <?php echo "Plot Number: " . $burialsData['burials-plot-number']; ?> |
