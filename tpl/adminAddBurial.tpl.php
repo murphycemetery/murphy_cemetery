@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Murphy Cemetery Add Burial">
+    <meta name="keywords" content="Murphy Cemetery, add burial, cemetery">
     <link rel="stylesheet" href="../adminAddBurial.css">
     <script
         src="https://code.jquery.com/jquery-3.6.0.min.js"
