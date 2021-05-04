@@ -156,8 +156,7 @@ function readMore() {
 
 <div class="column">
 <div class="col-sm-4 text-center">
-<a href="images/IMG3.jpg">
-<img class="pic" style="padding-bottom: 10px; position: relative;" src="images/murphyCemetery-10.jpg" alt="placeholder cemetery image" height="300px"></a>
+<img class="pic" style="padding-bottom: 10px; position: relative;" src="images/murphyCemetery-10.jpg" alt="placeholder cemetery image" height="300px">
 </div>
 
 <div class="col-sm-8">
@@ -183,8 +182,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 </div>
 
 <div class="col-sm-4 text-center">
-<a href="images/IMG3.jpg">
-<img class="pic" style="padding-bottom: 10px;" src="images/murphyCemetery-14.jpg" alt="placeholder cemetery image" height="300px"></a>
+<img class="pic" style="padding-bottom: 10px;" src="images/murphyCemetery-14.jpg" alt="placeholder cemetery image" height="300px">
 </div>
 </div>
 
