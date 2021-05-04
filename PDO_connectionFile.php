@@ -7,8 +7,8 @@ $serverName = 'localhost';
 //$username = 'murphy_admin'; 	//usernane of database
 $username = 'emanning11_murphy-cemetery';
 $password = 'MurphyCemetery_Group2';			//password of database
-$databaseName = 'murphy-cemetery';		//name of the database you will be accessing
-//$databaseName = 'emanning11_murphy-cemetery';		//name of the database you will be accessing
+//$databaseName = 'murphy-cemetery';		//name of the database you will be accessing
+$databaseName = 'emanning11_murphy-cemetery';		//name of the database you will be accessing
 
 
 
